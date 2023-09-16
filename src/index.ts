@@ -1,3 +1,8 @@
-const secret = process.env.SECRET ?? "default";
-
-console.log(`secretは${secret}です`);
+let sum = 0;
+for(;;) {
+    sum += 1;
+    if (sum >= 100) {
+        break;
+    }
+}
+console.log(sum);
