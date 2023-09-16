@@ -1,3 +1,3 @@
-const million = 1_000_000;
+const secret = process.env.SECRET ?? "default";
 
-console.log(0.1 + 0.2);
+console.log(`secretは${secret}です`);
