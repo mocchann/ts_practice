@@ -1,17 +1,22 @@
-let i = 1;
-while(i<=100) {
+let i:number = 1;
+
+while(i <= 100) {
     switch (i <= 100) {
         case i % 3 ===0 && i % 5 ===0:
-            console.log("FizzBuzz");
+            process.stdout.write("FizzBuzz ");
             i++;
+            break;
         case i % 5 === 0:
-            console.log("Buzz");
+            process.stdout.write("Buzz ");
             i++;
+            break;
         case i % 3 === 0:
-            console.log("Fizz");
+            process.stdout.write("Fizz ");
             i++;
+            break;
         default:
-            console.log(i);
+            process.stdout.write(String(`${i} `));
             i++;
+            break;
     }
 }
