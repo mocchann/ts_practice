@@ -1,22 +1,21 @@
-let i:number = 1;
+type FooBar = {
+    foo: string,
+    bar: number
+};
 
-while(i <= 100) {
-    switch (i <= 100) {
-        case i % 3 ===0 && i % 5 ===0:
-            process.stdout.write("FizzBuzz ");
-            i++;
-            break;
-        case i % 5 === 0:
-            process.stdout.write("Buzz ");
-            i++;
-            break;
-        case i % 3 === 0:
-            process.stdout.write("Fizz ");
-            i++;
-            break;
-        default:
-            process.stdout.write(String(`${i} `));
-            i++;
-            break;
-    }
-}
+type FooBarBaz = {
+    foo: string,
+    bar: number,
+    baz: boolean
+};
+
+const obj: FooBarBaz = {
+    foo: "hi",
+    bar: 1,
+    baz: false
+};
+
+const obj2: FooBar = obj;
+
+console.log(obj);
+console.log(obj2);
