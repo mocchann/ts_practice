@@ -1,21 +1,13 @@
-type FooBar = {
-    foo: string,
-    bar: number
+type HasName = {
+    name: string
 };
 
-type FooBarBaz = {
-    foo: string,
-    bar: number,
-    baz: boolean
+type Animal = {
+    name: string
 };
 
-const obj: FooBarBaz = {
-    foo: "hi",
-    bar: 1,
-    baz: false
+type Family<Parent extends HasName, Child extends HasName = Animal> = {
+    mother: Parent,
+    father: Parent,
+    child: Child
 };
-
-const obj2: FooBar = obj;
-
-console.log(obj);
-console.log(obj2);
