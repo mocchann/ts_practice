@@ -1,13 +1,14 @@
-type HasName = {
-    name: string
-};
+const arr1 = [
+    4,
+    5,
+    6
+];
 
-type Animal = {
-    name: string
-};
+const arr2 = [
+    1,
+    2,
+    3,
+    ...arr1
+];
 
-type Family<Parent extends HasName, Child extends HasName = Animal> = {
-    mother: Parent,
-    father: Parent,
-    child: Child
-};
+console.log(arr2);
