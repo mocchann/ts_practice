@@ -11,4 +11,4 @@ const arr2 = [
     ...arr1
 ];
 
-console.log(arr2);
+console.log(arr2[4]);
