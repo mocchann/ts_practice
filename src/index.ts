@@ -1,8 +1,7 @@
-const obj = {
-  str: "hello world!",
-  num: 1234,
-};
-
-const {
-  foo
-} = obj;
+const nested = {
+  num: 123,
+  obj: {
+    foo: "hello",
+    bar: "world"
+  }
+}
