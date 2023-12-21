@@ -1,2 +1,5 @@
-const foo = obj.foo;
-const bar = obj.bar;
+const {
+  foo,
+  bar: barVar,
+  "foo bar": fooBar
+} = obj;
