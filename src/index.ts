@@ -7,7 +7,10 @@ const nested = {
 }
 
 const {
-  foo,
-  bar
-} = nested.obj;
-console.log(bar);
+  num,
+  obj: {
+    foo
+  }
+} = nested;
+
+console.log(foo);
