@@ -5,3 +5,9 @@ const nested = {
     bar: "world"
   }
 }
+
+const {
+  foo,
+  bar
+} = nested.obj;
+console.log(bar);
