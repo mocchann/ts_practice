@@ -1,16 +1,6 @@
-const nested = {
-  num: 123,
-  obj: {
-    foo: "hello",
-    bar: "world"
-  }
-}
+const arr = [1, 2, 4, 8, 16, 32];
 
-const {
-  num,
-  obj: {
-    foo
-  }
-} = nested;
-
-console.log(foo);
+const [first, second, third] = arr;
+console.log(first);
+console.log(second);
+console.log(third);
