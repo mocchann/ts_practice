@@ -1,8 +1,6 @@
-const arr = [1,2,3,4,5];
+const tuple: [string, number] = ["uhyo", 26];
 
-// 要素をスキップするパターン
-const [, foo, bar, , baz] = arr;
+const [myName, age] = tuple;
 
-console.log(foo);
-console.log(bar);
-console.log(baz);
+console.log(myName);
+console.log(age);
