@@ -1,6 +1,12 @@
-const tuple: [string, number] = ["uhyo", 26];
+type Obj = { foo?: number };
+const obj1: Obj = {};
+console.log(obj1.foo);
 
-const [myName, age] = tuple;
+const obj2: Obj = { foo: -1234 };
+console.log(obj2);
 
-console.log(myName);
-console.log(age);
+const { foo = 500 } = obj1;
+console.log(foo);
+
+const { foo: bar = 500 } = obj2;
+console.log(bar);
