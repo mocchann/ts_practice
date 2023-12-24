@@ -1,7 +1,17 @@
-type Obj = { foo?: number | null };
+type NestedObj = {
+  obj?: {
+    foo: number
+  }
+};
 
-const obj2: Obj = { foo: null };
-console.log(obj2);
+const nested1: NestedObj = {
+  obj: { foo: 123 }
+};
 
-const { foo: bar = 500 } = obj2;
-console.log(bar);
+const nested2: NestedObj = {};
+
+const { obj: { foo: foo1 } = { foo: 500 } } = nested1;
+console.log(foo1);
+
+const { obj: { foo: foo2 } = { foo: 500 } } = nested2;
+console.log(foo2);
