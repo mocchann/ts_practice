@@ -1,10 +1,17 @@
-const arr = [1, 2, 4, 8, 16, 32];
+type NestedObj = {
+  obj?: {
+    foo: number
+  }
+};
 
-// 分割代入やらないパターン
-const first = arr[0];
-const second = arr[1];
-const third = arr[2];
+const nested1: NestedObj = {
+  obj: { foo: 123 }
+};
 
-console.log(first);
-console.log(second);
-console.log(third);
+const nested2: NestedObj = {};
+
+const { obj: { foo: foo1 } = { foo: 500 } } = nested1;
+console.log(foo1);
+
+const { obj: { foo: foo2 } = { foo: 500 } } = nested2;
+console.log(foo2);
