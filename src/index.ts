@@ -1,17 +1,7 @@
-type NestedObj = {
-  obj?: {
-    foo: number
-  }
-};
+const arr = [1, 1, 2, 3, 5, 8, 13];
 
-const nested1: NestedObj = {
-  obj: { foo: 123 }
-};
-
-const nested2: NestedObj = {};
-
-const { obj: { foo: foo1 } = { foo: 500 } } = nested1;
-console.log(foo1);
-
-const { obj: { foo: foo2 } = { foo: 500 } } = nested2;
-console.log(foo2);
+const [first, second, third, ...rest] = arr;
+console.log(first);
+console.log(second);
+console.log(third);
+console.log(rest);
