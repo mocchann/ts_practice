@@ -1,11 +1,35 @@
-let val: {} = 123;
-console.log(val);
+type User = {
+  name: string,
+  age: number,
+  premiumUser: boolean
+}
 
-val = "foobar";
-console.log(val);
+const data: string = `
+uhyo,26,1
+John Smith,17,0
+Mary Sue,14,1
+`;
 
-val = null;
-console.log(val);
+const users: User[] = [];
 
-val = null;
-console.log(val);
+const lines = data.split("\n").filter((line) => line !== '');
+
+for (const line of lines) {
+  const [name, ageString, premiumUserString] = line.split(",");
+  const age = Number(ageString);
+  const premiumUser = Boolean(premiumUserString);
+
+  users.push({
+    name,
+    age,
+    premiumUser
+  });
+}
+
+for (const user of users) {
+  if (user.premiumUser) {
+    console.log(`${user.name} (${user.age})はプレミアムユーザーです。`);
+  } else {
+    console.log(`${user.name} (${user.age})はプレミアムユーザーではありません。`);
+  }
+}
