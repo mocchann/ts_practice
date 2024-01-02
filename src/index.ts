@@ -1,6 +1,5 @@
-const result = "Hello, abbbbbbc world! abc".match(/a(b+)c/);
+const map: Map<string, number> = new Map();
+map.set("foo", 1234);
 
-if (result !== null) {
-  console.log(result[0]);
-  console.log(result[1]);
-}
+console.log(map.get("foo"));
+console.log(map.get("bar"));
