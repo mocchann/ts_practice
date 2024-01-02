@@ -1,6 +1,4 @@
-const r = /ab+c/;
+const r = /^abc/;
 
-console.log(r.test("abbbbc"));
-console.log(r.test("Hello, abc world!"));
-console.log(r.test("ABC"));
-console.log(r.test("こんにちは"));
+console.log(r.test("abcdefg"));
+console.log(r.test("Hello, abcdefg"));
