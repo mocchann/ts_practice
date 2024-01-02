@@ -14,6 +14,6 @@ for (const user of users) {
   if (user.premiumUser) {
     console.log(`${user.name} (${user.age})はプレミアムユーザーです。`);
   } else {
-    console.log(`${user.name} (${user.age})`)
+    console.log(`${user.name} (${user.age})はプレミアムユーザーではありません。`);
   }
 }
