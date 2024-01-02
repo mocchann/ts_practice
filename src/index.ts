@@ -10,21 +10,16 @@ John Smith,17,0
 Mary Sue,14,1
 `;
 
-const users: User[] = [];
-
-const lines = data.split("\n").filter((line) => line !== '');
-
-for (const line of lines) {
-  const [name, ageString, premiumUserString] = line.split(",");
-  const age = Number(ageString);
-  const premiumUser = Boolean(premiumUserString);
-
-  users.push({
-    name,
-    age,
-    premiumUser
+const users: User[] = data.split("\n")
+  .filter((line) => line !== '')
+  .map(line => {
+    const [name, ageString, premiumUserString] = line.split(",");
+    return {
+      name,
+      age: Number(ageString),
+      premiumUser: Boolean(premiumUserString)
+    }
   });
-}
 
 for (const user of users) {
   if (user.premiumUser) {
