@@ -1,5 +1,7 @@
-const map: Map<string, number> = new Map().set("foo", 1234);
-map.set("foo", 12345);
+type HasLength = {
+  length: number
+};
 
-console.log(map.get("foo"));
-console.log(map.get("bar"));
+const obj: HasLength = "foobar";
+
+console.log(obj);
