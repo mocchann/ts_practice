@@ -3,13 +3,19 @@ type Human = {
   weight: number,
 };
 
-const calcBMI = ({
+type ReturnObj = {
+  bmi: number,
+};
+
+const calcBMIObject = ({
   height, weight
-}: Human): number => weight / height ** 2;
+}: Human): ReturnObj => ({
+  bmi: weight / height ** 2
+});
 
 const uhyo: Human = {
   height: 1.84,
   weight: 72
 };
 
-console.log(calcBMI(uhyo));
+console.log(calcBMIObject(uhyo));
