@@ -1,30 +1,21 @@
-type User = {
-  name: string,
-  age: number,
-  premiumUser: boolean
-}
+type Human = {
+  height: number,
+  weight: number,
+};
 
-const data: string = `
-uhyo,26,1
-John Smith,17,0
-Mary Sue,14,1
-`;
+type ReturnObj = {
+  bmi: number,
+};
 
-const users: User[] = data.split("\n")
-  .filter((line) => line !== '')
-  .map(line => {
-    const [name, ageString, premiumUserString] = line.split(",");
-    return {
-      name,
-      age: Number(ageString),
-      premiumUser: Boolean(premiumUserString)
-    }
-  });
+const calcBMIObject = ({
+  height, weight
+}: Human): ReturnObj => ({
+  bmi: weight / height ** 2
+});
 
-for (const user of users) {
-  if (user.premiumUser) {
-    console.log(`${user.name} (${user.age})はプレミアムユーザーです。`);
-  } else {
-    console.log(`${user.name} (${user.age})はプレミアムユーザーではありません。`);
-  }
-}
+const uhyo: Human = {
+  height: 1.84,
+  weight: 72
+};
+
+console.log(calcBMIObject(uhyo));
