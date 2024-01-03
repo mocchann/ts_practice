@@ -1,3 +1,10 @@
+const uhyo: Human = {
+  height: 1.84,
+  weight: 72
+};
+
+console.log(calcBMI(uhyo));
+
 type Human = {
   height: number;
   weight: number;
@@ -6,10 +13,3 @@ type Human = {
 const calcBMI = function({ height, weight }: Human): number {
   return weight / height ** 2;
 };
-
-const uhyo: Human = {
-  height: 1.84,
-  weight: 72
-};
-
-console.log(calcBMI(uhyo));
