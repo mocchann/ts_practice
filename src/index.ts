@@ -1,12 +1,8 @@
-function helloWorldNTimes(n: number): void {
-  if (n >= 100) {
-    console.log(`${n}回なんて無理です！`);
-    return;
-  }
-  for (let i=0; i < n; i++) {
-    console.log("Hello World!");
-  }
+function toSeconds(hours: number, minutes: number, seconds: number): number {
+  return
+    hours * 3600
+    + minutes * 60
+    + seconds;
 }
 
-helloWorldNTimes(10);
-helloWorldNTimes(1000);
+console.log(toSeconds(1, 60, 60));
