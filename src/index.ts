@@ -1,8 +1,15 @@
-function toSeconds(hours: number, minutes: number, seconds: number): number {
-  return
-    hours * 3600
-    + minutes * 60
-    + seconds;
-}
+type Human = {
+  height: number;
+  weight: number;
+};
 
-console.log(toSeconds(1, 60, 60));
+const calcBMI = function(human: Human): number {
+  return human.weight / human.height ** 2;
+};
+
+const uhyo: Human = {
+  height: 1.84,
+  weight: 72
+};
+
+console.log(calcBMI(uhyo));
