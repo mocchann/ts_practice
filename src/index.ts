@@ -1,5 +1,5 @@
-const sum = (...args: number[]): number => {
-  let result = 0;
+const sum = (base: number, ...args: number[]): number => {
+  let result = base * 1000;
   for (const num of args) {
     result += num;
   }
