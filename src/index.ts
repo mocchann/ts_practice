@@ -1,4 +1,11 @@
-const sum3 = (a: number, b: number, c: number) => a+b+c;
-const nums:[number, number, number] = [1,2,3];
+const toLowerOrUpper = (str: string, upper?: boolean): string => {
+  if (upper) {
+    return str.toUpperCase();
+  } else {
+    return str.toLowerCase();
+  }
+}
 
-console.log(sum3(...nums));
+console.log(toLowerOrUpper("Hello"));
+console.log(toLowerOrUpper("Hello", false));
+console.log(toLowerOrUpper("Hello", true));
