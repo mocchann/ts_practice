@@ -1,5 +1,12 @@
-function foo(): void {}
-const bar = (): void => {};
+type User = {
+  name: string,
+  age: number,
+};
 
-console.log(foo.name);
-console.log(bar.name);
+const users: User[] = [
+  { name: "uhyo", age: 26 },
+  { name: "John Smith", age: 15 }
+];
+
+const names = users.map((u: User): string => u.name);
+console.log(names);
