@@ -6,6 +6,4 @@ const toLowerOrUpper = (str: string, upper?: boolean): string => {
   }
 }
 
-console.log(toLowerOrUpper("Hello"));
-console.log(toLowerOrUpper("Hello", false));
-console.log(toLowerOrUpper("Hello", true));
+console.log(toLowerOrUpper("Hello", undefined));
