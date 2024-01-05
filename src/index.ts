@@ -1,21 +1,5 @@
-type Human = {
-  height: number,
-  weight: number,
-};
+const nums = [1,2,3];
 
-type ReturnObj = {
-  bmi: number,
-};
+const arr = nums.filter(x => x % 3 === 0);
 
-const calcBMIObject = ({
-  height, weight
-}: Human): ReturnObj => ({
-  bmi: weight / height ** 2
-});
-
-const uhyo: Human = {
-  height: 1.84,
-  weight: 72
-};
-
-console.log(calcBMIObject(uhyo));
+console.log(arr);
