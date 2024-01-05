@@ -1,5 +1,11 @@
-const nums = [1,2,3];
+type MyFunc = {
+  isUsed?: boolean;
+  (arg: number): void;
+};
 
-const arr = nums.filter(x => x % 3 === 0);
+const double: MyFunc = (arg: number) => {
+  console.log(arg * 2);
+};
 
-console.log(arr);
+double.isUsed = true;
+console.log(double.isUsed);
