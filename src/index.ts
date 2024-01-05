@@ -9,3 +9,5 @@ const double: MyFunc = (arg: number) => {
 
 double.isUsed = true;
 console.log(double.isUsed);
+
+double(1000);
