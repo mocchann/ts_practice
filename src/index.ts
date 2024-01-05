@@ -1,7 +1,7 @@
-type F = (repeatNum: number) => string;
+const xRepeat = (num: number) => "x".repeat(num);
 
-const xRepeat: F = (num: number): string => "x".repeat(num);
-
-type F2 = (arg: string, arg2: string) => boolean;
-
-const fun: F2 = (num: number): void => console.log(num);
+const g = (num: number) => {
+  for (let i = 0; i < num; i++) {
+    console.log("Hello, world!");
+  }
+};
