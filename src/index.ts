@@ -1,7 +1,3 @@
-const xRepeat = (num: number) => "x".repeat(num);
+type F = (arg: number) => string;
 
-const g = (num: number) => {
-  for (let i = 0; i < num; i++) {
-    console.log("Hello, world!");
-  }
-};
+const xRepeat: F = (num) => "x".repeat(num);
