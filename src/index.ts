@@ -1,13 +1,16 @@
-type MyFunc = {
-  isUsed?: boolean;
-  (arg: number): void;
-};
+type HasName = {
+  name: string;
+}
+type HasNameAndAge = {
+  name: string;
+  age: number;
+}
 
-const double: MyFunc = (arg: number) => {
-  console.log(arg * 2);
-};
+const fromAge = (age: number): HasNameAndAge => ({
+  name: "John Smith",
+  age,
+});
 
-double.isUsed = true;
-console.log(double.isUsed);
-
-double(1000);
+const f: (age: number) => HasName = fromAge;
+const obj: HasName = f(100);
+console.log(obj);
