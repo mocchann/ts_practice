@@ -1,15 +1,11 @@
-function repeat<T>(element: T, length: number): T[] {
-  const result: T[] = [];
+type Func = <T>(arg: T, num: number) => T[];
+
+const repeat: Func = (element, length) => {
+  const result = [];
   for (let i = 0; i < length; i++) {
     result.push(element);
   }
   return result;
 }
 
-type HasNameAndAge = {
-  name: string;
-  age: number;
-}
-
-const result = repeat("a", 5);
-console.log(result);
+console.log(repeat("a", 5));
