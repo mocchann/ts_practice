@@ -1,6 +1,4 @@
-const repeat = <T extends {
-  name: string,
-}>(element: T, length: number): T[] => {
+function repeat<T>(element: T, length: number): T[] {
   const result: T[] = [];
   for (let i = 0; i < length; i++) {
     result.push(element);
@@ -13,7 +11,5 @@ type HasNameAndAge = {
   age: number;
 }
 
-console.log(repeat<HasNameAndAge>({
-  name: "uhyo",
-  age: 26,
-}, 3));
+const result = repeat("a", 5);
+console.log(result);
