@@ -6,11 +6,14 @@ type HasNameAndAge = {
   age: number;
 }
 
-const fromAge = (age: number): HasNameAndAge => ({
-  name: "John Smith",
-  age,
-});
+const showName = (obj: HasName) => {
+  console.log(obj);
+  console.log(obj.name);
+  console.log(obj.age);
+};
+const g: (obj: HasNameAndAge) => void = showName;
 
-const f: (age: number) => HasName = fromAge;
-const obj: HasName = f(100);
-console.log(obj);
+g({
+  name: "uhyo",
+  age: 26,
+});
