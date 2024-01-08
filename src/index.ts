@@ -1,5 +1,19 @@
-const pair = <Left, Right>(left: Left, right: Right): [Left, Right] => [left, right];
+const repeat = <T extends {
+  name: string,
+}>(element: T, length: number): T[] => {
+  const result: T[] = [];
+  for (let i = 0; i < length; i++) {
+    result.push(element);
+  }
+  return result;
+}
 
-const p = pair<string, number>("uhyo", 26);
+type HasNameAndAge = {
+  name: string;
+  age: number;
+}
 
-console.log(p)
+console.log(repeat<HasNameAndAge>({
+  name: "uhyo",
+  age: 26,
+}, 3));
