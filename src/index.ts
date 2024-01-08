@@ -1,19 +1,8 @@
-type HasName = {
-  name: string;
-}
-type HasNameAndAge = {
-  name: string;
-  age: number;
-}
+type U = (arg: number) => number;
+type B = (left: number, right: number) => number;
 
-const showName = (obj: HasName) => {
-  console.log(obj);
-  console.log(obj.name);
-  console.log(obj.age);
-};
-const g: (obj: HasNameAndAge) => void = showName;
+const double: U = arg => arg * 2;
+const add: B = (left, right) => left + right;
 
-g({
-  name: "uhyo",
-  age: 26,
-});
+const bin: B = double;
+console.log(bin(10, 100));
