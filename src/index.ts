@@ -1,24 +1,11 @@
-for (const i of sequence(1, 100)) {
-  const message = getFizzBuzzString(i);
-  console.log(message);
+function map<T, U>(array: T[], callback: (value: T) => U): U[] {
+  const result: U[] = [];
+  for (const elm of array) {
+    result.push(callback(elm));
+  }
+  return result;
 }
 
-function getFizzBuzzString(i: number): string {
-  if (i % 3 === 0 && i % 5 === 0) {
-    return `${i} FizzBuzz`;
-  } else if (i % 3 === 0) {
-    return `${i} Fizz`;
-  } else if (i % 5 === 0) {
-    return `${i} Buzz`;
-  } else {
-    return String(i);
-  }
-}
-
-function sequence(startNum: number, endNum: number): number[] {
-  let fizzBuzzArray: number[] = [];
-  for (let i = startNum; i <= endNum; i++) {
-    fizzBuzzArray.push(i);
-  }
-  return fizzBuzzArray;
-}
+const data = [1, -3, -2, 7, 0, -1];
+const result: boolean[] = map<number, boolean>(data, (x) => x >= 0);
+console.log(result);
