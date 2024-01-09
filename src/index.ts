@@ -1,5 +1,5 @@
 class User {
-  name: string = "";
+  name?: string;
   age: number = 0;
 }
 
@@ -8,4 +8,5 @@ const obj = {
 };
 
 const uhyo = new obj.cl();
+console.log(uhyo.name);
 console.log(uhyo.age);
