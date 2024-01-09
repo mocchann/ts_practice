@@ -1,12 +1,19 @@
 class User {
-  name?: string;
+  name: string = "";
   age: number = 0;
+
+  isAdult(): boolean {
+    return this.age >= 20;
+  }
+
+  setAge(newAge: number): void {
+    this.age = newAge;
+  }
 }
 
-const obj = {
-  cl: User
-};
+const uhyo = new User;
+console.log(uhyo.isAdult());
 
-const uhyo = new obj.cl();
-console.log(uhyo.name);
+uhyo.setAge(26);
 console.log(uhyo.age);
+console.log(uhyo.isAdult());
