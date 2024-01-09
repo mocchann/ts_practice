@@ -1,6 +1,11 @@
 class User {
+  static adminName: string = "uhyo";
+  static getAdminUser() {
+    return new User(User.adminName, 26);
+  }
+
   name: string;
-  readonly age: number;
+  age: number;
 
   constructor(name: string, age: number) {
     this.name = name;
@@ -10,12 +15,13 @@ class User {
   isAdult(): boolean {
     return this.age >= 20;
   }
-
-  setAge(newAge: number): void {
-    this.age = newAge;
-  }
 }
 
+console.log(User.adminName);
+const admin = User.getAdminUser();
+console.log(admin);
+console.log(admin.name);
+console.log(admin.age);
+
 const uhyo = new User("uhyo", 26);
-console.log(uhyo.name);
-console.log(uhyo.isAdult());
+console.log(uhyo.adminName);
