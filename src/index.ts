@@ -3,9 +3,9 @@ class User {
   age: number = 0;
 }
 
-const uhyo = new User();
-console.log(uhyo.name);
-console.log(uhyo.age);
+const obj = {
+  cl: User
+};
 
-uhyo.age = 26;
+const uhyo = new obj.cl();
 console.log(uhyo.age);
