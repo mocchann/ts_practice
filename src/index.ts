@@ -1,11 +1,17 @@
-function map<T, U>(array: T[], callback: (value: T) => U): U[] {
-  const result: U[] = [];
-  for (const elm of array) {
-    result.push(callback(elm));
-  }
-  return result;
-}
+const User = class {
+  name: string;
+  age: number;
 
-const data = [1, -3, -2, 7, 0, -1];
-const result: boolean[] = map<number, boolean>(data, (x) => x >= 0);
-console.log(result);
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  public isAdult(): boolean {
+    return this.age >= 20;
+  }
+};
+
+const uhyo = new User("uhyo", 26);
+console.log(uhyo.name);
+console.log(uhyo.isAdult());
