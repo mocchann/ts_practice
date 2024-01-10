@@ -1,18 +1,20 @@
-class User {
+class User<T> {
   name: string;
   #age: number;
+  readonly data: T;
 
-  constructor(name: string, age: number) {
+  constructor(name: string, age: number, data: T) {
     this.name = name;
-    this.#age = age;
+    this.#age =age;
+    this.data = data;
   }
-
   public isAdult(): boolean {
     return this.#age >= 20;
   }
 }
 
-const uhyo = new User("uhyo", 26);
-console.log(uhyo.name);
-console.log(uhyo);
-console.log(uhyo.isAdult());
+const uhyo = new User<string>("uhyo", 26, "追加データ");
+const data = uhyo.data;
+
+const john = new User("jhon Smith", 15, { num: 123 });
+const data2 = john.data;
