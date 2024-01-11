@@ -4,7 +4,9 @@ class User {
 }
 
 
-type MyUserConstructor = new () => User;
+type MyUserConstructor = {
+  new (): User;
+};
 
 const MyUser: MyUserConstructor = User;
 
