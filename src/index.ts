@@ -3,7 +3,6 @@ class User {
   age: number = 0;
 }
 
-
 type MyUserConstructor = {
   new (): User;
 };
