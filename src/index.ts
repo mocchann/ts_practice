@@ -3,12 +3,15 @@ class User {
   age: number = 0;
 }
 
-type MyUserConstructor = {
-  new (): User;
+const uhyo = new User();
+
+console.log(uhyo instanceof User);
+
+console.log({} instanceof User);
+
+const john: User = {
+  name: "John Smith",
+  age: 15,
 };
 
-const MyUser: MyUserConstructor = User;
-
-const u = new MyUser();
-
-console.log(u.name, u.age);
+console.log(john instanceof User);
