@@ -15,7 +15,7 @@ class User {
 }
 
 class PremiumUser extends User {
-  rank: number = 1;
+  override rank: number = 1;
 
   public override isAdult(): boolean {
     return true;
