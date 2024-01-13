@@ -1,21 +1,15 @@
-class User {
-  name: string;
-  #age: number;
+const arr1 = new Array<number>();
+console.log(arr1);
+console.log(typeof arr1);
 
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.#age = age;
-  }
+const arr2: number[] = [];
+console.log(arr2);
+console.log(typeof arr2);
 
-  public isAdult(): boolean {
-    return this.#age >= 20;
-  }
-}
+const arr3 = new Array(1, 3, 57);
+console.log(arr3);
+console.log(typeof arr3);
 
-const uhyo = new User("uhyo", 25);
-const john = new User("John Smith", 15);
-
-const boundIsAdult = uhyo.isAdult.bind(uhyo);
-
-console.log(boundIsAdult());
-console.log(boundIsAdult.call(john));
+const arr4 = new Array(10);
+console.log(arr4);
+console.log(typeof arr4);
