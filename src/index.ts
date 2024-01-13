@@ -16,3 +16,5 @@ arr.push(3);
 const repeated = arr.repeat(3);
 
 console.log(repeated);
+
+console.log(Array.of(10));
