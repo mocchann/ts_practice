@@ -9,8 +9,8 @@ class User {
     this.#age = age;
   }
 
-  public isAdult(): boolean {
-    return this.#age >= 20;
+  public isChild(): boolean {
+    return this.#age < 20;
   }
 }
 
