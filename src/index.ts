@@ -16,14 +16,14 @@ class User {
 
 class PremiumUser extends User {
   rank: number = 1;
-}
 
-function getMessage(u: User) {
-  return `こんにちは、${u.name}さん`;
+  public isAdult(): boolean {
+    return true;
+  }
 }
 
 const john = new User("J", 15);
-const uhyo = new PremiumUser("uhyo", 26);
+const uhyo = new PremiumUser("uhyo", 15);
 
-console.log(getMessage(john));
-console.log(getMessage(uhyo));
+console.log(john.isAdult());
+console.log(uhyo.isAdult());
