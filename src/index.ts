@@ -1,29 +1,20 @@
-class User {
-  name: string;
-  protected age: number;
-  private _isAdult: boolean;
-
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-    this._isAdult = age >= 20;
-  }
-
-  public isAdult(): boolean {
-    return this._isAdult;
+class RepeatArray<T> extends Array<T> {
+  repeat(times: number): RepeatArray<T> {
+    const result = new RepeatArray<T>();
+    for (let i = 0; i < times; i++) {
+      result.push(...this);
+      console.log(result);
+    }
+    return result;
   }
 }
 
-class PremiumUser extends User {
+const arr = new RepeatArray(1, 2);
 
-  public setAge(newAge: number) {
-    this.age = newAge;
-  }
-}
+arr.push(3);
 
-const uhyo = new PremiumUser("uhyo", 26);
-console.log(uhyo.isAdult());
+const repeated = arr.repeat(3);
 
-uhyo.setAge(15);
-console.log(uhyo);
-console.log(uhyo.isAdult());
+console.log(repeated);
+
+console.log(Array.of(10));
