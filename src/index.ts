@@ -15,8 +15,7 @@ class User {
 const uhyo = new User("uhyo", 25);
 const john = new User("John Smith", 15);
 
-console.log(uhyo.isAdult());
+const boundIsAdult = uhyo.isAdult.bind(uhyo);
 
-console.log(uhyo.isAdult.call(john));
-
-console.log(Reflect.apply(uhyo.isAdult, john, []));
+console.log(boundIsAdult());
+console.log(boundIsAdult.call(john));
