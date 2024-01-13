@@ -1,29 +1,19 @@
 class User {
   name: string;
-  protected age: number;
-  private _isAdult: boolean;
+  age: number;
 
   constructor(name: string, age: number) {
     this.name = name;
     this.age = age;
-    this._isAdult = age >= 20;
   }
 
   public isAdult(): boolean {
-    return this._isAdult;
+    return this.age >= 20;
   }
 }
 
-class PremiumUser extends User {
 
-  public setAge(newAge: number) {
-    this.age = newAge;
-  }
-}
+const uhyo = new User("uhyo", 26);
+const john = new User("john", 15);
 
-const uhyo = new PremiumUser("uhyo", 26);
-console.log(uhyo.isAdult());
-
-uhyo.setAge(15);
-console.log(uhyo);
-console.log(uhyo.isAdult());
+console.log(uhyo.isAdult === john.isAdult);
