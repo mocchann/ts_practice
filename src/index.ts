@@ -17,4 +17,6 @@ const john = new User("John Smith", 15);
 
 console.log(uhyo.isAdult());
 
-console.log(uhyo.isAdult.apply(john, []));
+console.log(uhyo.isAdult.call(john));
+
+console.log(Reflect.apply(uhyo.isAdult, john, []));
