@@ -17,13 +17,13 @@ class User {
 class PremiumUser extends User {
   rank: number = 1;
 
-  public isAdult(): string {
-    return "11";
+  constructor(name: string, age: number, rank: number) {
+    super(name, age);
+    this.rank = rank;
   }
 }
 
-const john = new User("J", 15);
-const uhyo = new PremiumUser("uhyo", 15);
+const uhyo = new PremiumUser("uhyo", 26, 3);
 
-console.log(john.isAdult());
-console.log(uhyo.isAdult());
+console.log(uhyo.name);
+console.log(uhyo.rank);
