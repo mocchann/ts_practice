@@ -17,8 +17,8 @@ class User {
 class PremiumUser extends User {
   rank: number = 1;
 
-  public isAdult(): boolean {
-    return true;
+  public isAdult(): string {
+    return "11";
   }
 }
 
