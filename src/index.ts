@@ -1,11 +1,24 @@
-const user = {
-  name: "uhyo",
-  age: 26,
-  isAdult() {
-    return this.age >= 20;
-  }
-};
+class User {
+  name: string;
+  #age: number;
 
-console.log(user.isAdult());
-user.age = 15;
-console.log(user.isAdult());
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.#age = age;
+  }
+
+  public isAdult(): boolean {
+    return this.#age >= 20;
+  }
+
+  public filterOlder(users: readonly User[]): User[] {
+    return users.filter(u => u.#age > this.#age);
+  }
+}
+
+const uhyo = new User("uhyo", 25);
+const john = new User("john smith", 15);
+const bob = new User("bob", 40);
+
+const older = uhyo.filterOlder([john, bob]);
+console.log(older);
