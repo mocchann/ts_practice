@@ -12,8 +12,9 @@ class User {
   }
 
   public filterOlder(users: readonly User[]): User[] {
-    return users.filter(function(this: User, u) {
-      return u.#age > this.#age;
+    const _this = this;
+    return users.filter(function(u) {
+      return u.#age > _this.#age;
     });
   }
 }
