@@ -1,25 +1,15 @@
-class EmptyArrayError extends Error {}
+type getMessage = {
+  (message: string): string
+}
 
-try {
-  getAverage([1, 2, 3]);
-  getAverage([]);
-} catch(err) {
-  if (err instanceof EmptyArrayError) {
-    console.log("EmptyArrayErrorをキャッチしました");
-  } else {
-    throw err;
+function createUser(name: string, age: number): getMessage {
+  if (name === "") {
+    throw new Error("名前はからにできない");
   }
+  return (message: string): string  => `${name} (${age}) 「${message}」`;
 }
 
-function getAverage(nums: number[]) {
-  if (nums.length === 0) {
-    throw new EmptyArrayError("配列からだよ");
-  }
-  return sum(nums) / nums.length;
-}
-
-function sum(nums: number[]): number {
-  let result = 0;
-  for (const num of nums) result += num;
-  return result;
-}
+const getMessage = createUser("uhyo", 26);
+// "uhyo(26)「こんにちは」"と表示される
+console.log(getMessage("こんにちは"));
+console.log(getMessage(""));
