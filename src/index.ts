@@ -1,14 +1,25 @@
-console.log(sum(100));
+class EmptyArrayError extends Error {}
 
-function sum(max: number): number {
-  try {
-    let result = 0;
-    for (let i = 0; i <= max; i++) {
-      result += i;
-    }
-    return result;
-  } finally {
-    console.log("sumから脱出する");
+try {
+  getAverage([1, 2, 3]);
+  getAverage([]);
+} catch(err) {
+  if (err instanceof EmptyArrayError) {
+    console.log("EmptyArrayErrorをキャッチしました");
+  } else {
+    throw err;
   }
-  
+}
+
+function getAverage(nums: number[]) {
+  if (nums.length === 0) {
+    throw new EmptyArrayError("配列からだよ");
+  }
+  return sum(nums) / nums.length;
+}
+
+function sum(nums: number[]): number {
+  let result = 0;
+  for (const num of nums) result += num;
+  return result;
 }
