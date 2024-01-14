@@ -1,20 +1,25 @@
-class RepeatArray<T> extends Array<T> {
-  repeat(times: number): RepeatArray<T> {
-    const result = new RepeatArray<T>();
-    for (let i = 0; i < times; i++) {
-      result.push(...this);
-      console.log(result);
-    }
-    return result;
+class EmptyArrayError extends Error {}
+
+try {
+  getAverage([1, 2, 3]);
+  getAverage([]);
+} catch(err) {
+  if (err instanceof EmptyArrayError) {
+    console.log("EmptyArrayErrorをキャッチしました");
+  } else {
+    throw err;
   }
 }
 
-const arr = new RepeatArray(1, 2);
+function getAverage(nums: number[]) {
+  if (nums.length === 0) {
+    throw new EmptyArrayError("配列からだよ");
+  }
+  return sum(nums) / nums.length;
+}
 
-arr.push(3);
-
-const repeated = arr.repeat(3);
-
-console.log(repeated);
-
-console.log(Array.of(10));
+function sum(nums: number[]): number {
+  let result = 0;
+  for (const num of nums) result += num;
+  return result;
+}
