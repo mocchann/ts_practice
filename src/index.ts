@@ -1,13 +1,12 @@
 try {
-  console.log("tryブロック");
-} catch(error) {
-  console.log("catchブロック")
+  console.log("エラーを発生させる");
+  throwError();
+  console.log("エラーを発生させた");
 } finally {
   console.log("finallyブロック");
 }
+console.log("try分の後ろ");
 
-try {
-  console.log("tryブロック")
-} finally {
-  console.log("finallyブロック");
+function throwError() {
+  throw new Error("エラーが発生!!!");
 }
