@@ -1,18 +1,5 @@
-type Human = {
-  name: string;
-  age: number | undefined;
-};
+type GetTimeFunc = () => Date;
 
-const uhyo: Human = {
-  name: "uhyo",
-  age: 27,
-};
-
-const john: Human = {
-  name: "john",
-  age : undefined,
-};
-
-const taro: Human = {
-  name: "taro",
+function useTime(getTimeFunc: GetTimeFunc | undefined) {
+  const timeOrUndefined = getTimeFunc?.();
 }
