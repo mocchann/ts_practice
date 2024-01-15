@@ -18,4 +18,9 @@ const uhyo: Human = {
   name: "uhyo",
 };
 
-type StringAndNumber = string & number;
+const cat1: Animal & string = "cat";
+
+const cat2: Animal & string = {
+  species: "FFFFF",
+  age: 3
+};
