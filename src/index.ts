@@ -16,6 +16,6 @@ const uhyo: User = {
   name: "string"
 };
 
-const book: User = {
-  title: "Software Design"
-};
+function getName(user: User): string {
+  return user.name;
+}
