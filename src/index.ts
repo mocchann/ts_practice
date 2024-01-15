@@ -1,26 +1,28 @@
-type Human = {
-  name: string;
-  age?: number;
-};
-
-const uhyo: Human = {
-  name: "uhyo",
-  age: 26,
-};
-
-const john: Human = {
-  name: "john",
-};
-
 type Animal = {
   species: string;
+  age: string;
 };
 
-const cat = {
-  species: "Felis silvestris catus",
-  age: "永遠の17歳",
+type Human = {
+  name: string;
+  age: number;
 };
 
-const animal: Animal = cat;
-console.log(animal.species);
-console.log(animal.age);
+type User = Animal | Human;
+
+const tama: User = {
+  species: "FFFFF",
+  age: "jalkjgai;jrfgo;iajg",
+};
+
+const uhyo: User = {
+  name: "uhyo",
+  age: 121,
+};
+
+function showAge(user: User) {
+  const age = user.age;
+  console.log(age);
+}
+
+showAge(uhyo);
