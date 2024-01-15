@@ -17,3 +17,5 @@ const uhyo: Human = {
   age: 26,
   name: "uhyo",
 };
+
+type StringAndNumber = string & number;
