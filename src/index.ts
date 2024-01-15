@@ -1,15 +1,21 @@
-type getMessage = {
-  (message: string): string
+type Animal = {
+  species: string;
+};
+
+type Human = {
+  name: string;
+};
+
+type User = Animal | Human;
+
+const tama: User = {
+  species: "Felis silverstris catus"
 }
 
-function createUser(name: string, age: number): getMessage {
-  if (name === "") {
-    throw new Error("名前はからにできない");
-  }
-  return (message: string): string  => `${name} (${age}) 「${message}」`;
-}
+const uhyo: User = {
+  name: "string"
+};
 
-const getMessage = createUser("uhyo", 26);
-// "uhyo(26)「こんにちは」"と表示される
-console.log(getMessage("こんにちは"));
-console.log(getMessage(""));
+const book: User = {
+  title: "Software Design"
+};
