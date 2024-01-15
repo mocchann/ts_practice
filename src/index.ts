@@ -1,6 +1,6 @@
 type Human = {
   name: string;
-  age?: number;
+  age: number | undefined;
 };
 
 const uhyo: Human = {
@@ -12,3 +12,7 @@ const john: Human = {
   name: "john",
   age : undefined,
 };
+
+const taro: Human = {
+  name: "taro",
+}
