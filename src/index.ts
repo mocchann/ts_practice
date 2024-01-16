@@ -1,7 +1,7 @@
-function signNumber(type: "plus" | "minus") {
-  return type === "plus" ? 1 : -1;
-}
+const uhyo1 = "uhyo";
 
-console.log(signNumber("plus"));
-console.log(signNumber("minus"));
-console.log(signNumber("uhyo"));
+const uhyo2: "uhyo" = "uhyo";
+
+let uhyo3 = uhyo1;
+
+let uhyo4 = uhyo2;
