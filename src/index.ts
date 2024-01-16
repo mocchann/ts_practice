@@ -1,5 +1,5 @@
-type GetTimeFunc = () => Date;
+type FooString = "foo";
 
-function checkForAdultUser(getTimeFunc: GetTimeFunc | undefined) {
-  const timeStringOrUndefined = getTimeFunc?.().toString();
-}
+const foo: FooString = "foo";
+
+const bar: FooString = "bar";
