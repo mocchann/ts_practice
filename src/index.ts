@@ -1,8 +1,7 @@
-
-function fromKey<T extends string>(key: `user:${T}`): T {
-  return key.slice(5) as T;
+function signNumber(type: "plus" | "minus") {
+  return type === "plus" ? 1 : -1;
 }
 
-const user = fromKey("user:uhyo");
-
-console.log(user);
+console.log(signNumber("plus"));
+console.log(signNumber("minus"));
+console.log(signNumber("uhyo"));
