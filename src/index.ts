@@ -6,9 +6,9 @@ function signNumber(type: SignType) {
 function numberWithSign(num: number, type: SignType | "none") {
   if (type === "none") {
     return 0;
-  } else {
-    return num * signNumber(type);
   }
+
+  return num * signNumber(type);
 }
 
 console.log(numberWithSign(5, "plus"));
