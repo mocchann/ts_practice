@@ -1,7 +1,32 @@
-const uhyo1 = "uhyo";
+type Animal = {
+  tag: "animal";
+  species: string;
+}
 
-const uhyo2: "uhyo" = "uhyo";
+type Human = {
+  tag: "human";
+  name: string;
+}
 
-let uhyo3 = uhyo1;
+type User = Animal | Human;
 
-let uhyo4 = uhyo2;
+function getUserName(user: User) {
+  if (user.tag === "human") {
+    return user.name;
+  } else {
+    return "no name";
+  }
+}
+
+const tama: User = {
+  tag: "animal",
+  species: "fffffffff",
+};
+
+const uhyo: User = {
+  tag: "human",
+  name: "uhyo",
+};
+
+console.log(getUserName(tama));
+console.log(getUserName(uhyo));
