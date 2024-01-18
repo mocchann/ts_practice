@@ -10,9 +10,17 @@ type Human = {
 
 type User = Animal | Human;
 
+function getUserName(user: User) {
+  if (user.tag === "human") {
+    return user.name;
+  } else {
+    return "no name";
+  }
+}
+
 const tama: User = {
   tag: "animal",
-  species: "fFFFFF",
+  species: "fffffffff",
 };
 
 const uhyo: User = {
@@ -20,7 +28,5 @@ const uhyo: User = {
   name: "uhyo",
 };
 
-const alien: User = {
-  tag: "alien",
-  name: "gray",
-};
+console.log(getUserName(tama));
+console.log(getUserName(uhyo));
