@@ -1,21 +1,26 @@
 type Human = {
-  type: "human";
   name: string;
-  age: bigint;
+  age: number;
 };
 
-function setAge(human: Human, age: Human["age"]) {
+type HumanKeys = keyof Human;
+
+let key: HumanKeys = "name";
+key = "age";
+
+const mmConversionTable = {
+  mm: 1,
+  m: 1e3,
+  km: 1e6,
+};
+
+function convertUnits(value: number, unit: keyof typeof mmConversionTable) {
+  const mmValue = value * mmConversionTable[unit];
   return {
-    ...human,
-    age,
+    mm: mmValue,
+    m: mmValue / 1e3,
+    km: mmValue / 1e6,
   };
 }
 
-const uhyo: Human = {
-  type: "human",
-  name: "uhyo",
-  age: 26n,
-};
-
-const uhyo2 = setAge(uhyo, 27n);
-console.log(uhyo2);
+console.log(convertUnits(5600, "m"));
