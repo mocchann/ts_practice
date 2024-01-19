@@ -8,26 +8,28 @@ type Human = {
   name: string;
 }
 
-type User = Animal | Human;
+type Robot = {
+  tag: "robot";
+  name: string;
+}
 
-function getUserName(user: User) {
+type User = Animal | Human | Robot;
+
+function getUserName1(user: User): string {
+  if (user.tag === "human") {
+    return user.name;
+  } else {
+    return "no name";
+  }
+}
+
+function getUserName2(user: User): string {
   switch (user.tag) {
     case "human":
       return user.name;
     case "animal":
       return "no name";
+    case "robot":
+      return `CPU ${user.name}`;
   }
 }
-
-const tama: User = {
-  tag: "animal",
-  species: "fffffffff",
-};
-
-const uhyo: User = {
-  tag: "human",
-  name: "uhyo",
-};
-
-console.log(getUserName(tama));
-console.log(getUserName(uhyo));
