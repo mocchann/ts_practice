@@ -1,35 +1,16 @@
-type Animal = {
-  tag: "animal";
-  species: string;
+function get<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
 }
 
 type Human = {
-  tag: "human";
   name: string;
-}
+  age: number;
+};
 
-type Robot = {
-  tag: "robot";
-  name: string;
-}
+const uhyo: Human = {
+  name: "uhyo",
+  age: 26,
+};
 
-type User = Animal | Human | Robot;
-
-function getUserName1(user: User): string {
-  if (user.tag === "human") {
-    return user.name;
-  } else {
-    return "no name";
-  }
-}
-
-function getUserName2(user: User): string {
-  switch (user.tag) {
-    case "human":
-      return user.name;
-    case "animal":
-      return "no name";
-    case "robot":
-      return `CPU ${user.name}`;
-  }
-}
+const uhyoName = get(uhyo, "name");
+const uhyoAge = get(uhyo, "age");
