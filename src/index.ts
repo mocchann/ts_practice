@@ -11,10 +11,11 @@ type Human = {
 type User = Animal | Human;
 
 function getUserName(user: User) {
-  if (user.tag === "human") {
-    return user.name;
-  } else {
-    return "no name";
+  switch (user.tag) {
+    case "human":
+      return user.name;
+    case "animal":
+      return "no name";
   }
 }
 
