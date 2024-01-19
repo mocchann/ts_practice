@@ -10,6 +10,7 @@ key = "age";
 
 const mmConversionTable = {
   mm: 1,
+  cm: 10,
   m: 1e3,
   km: 1e6,
 };
@@ -23,4 +24,4 @@ function convertUnits(value: number, unit: keyof typeof mmConversionTable) {
   };
 }
 
-console.log(convertUnits(5600, "m"));
+console.log(convertUnits(5600, "cm"));
