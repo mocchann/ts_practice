@@ -1,3 +1,3 @@
-const names = ["uhyo", "john", "taro"];
+const names = ["uhyo", "john", "taro"] as const;
 
-const namess = ["uhyo", "john", "taro"] as const;
+type Name = (typeof names)[number];
