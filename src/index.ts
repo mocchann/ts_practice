@@ -1,15 +1,12 @@
-function doNothing(val: unknown) {
-  console.log(val);
-  console.log(val.name);
+function useUnknown(val: unknown) {
+  if (typeof val === "string") {
+    console.log("val is string");
+    console.log(val.slice(0, 5));
+  } else {
+    console.log("val is a few string");
+    console.log(val);
+  }
 }
 
-doNothing(3);
-doNothing({
-  user: {
-    name: "uhyo",
-  },
-});
-
-doNothing(() => {
-  console.log("hi");
-});
+useUnknown("foobar");
+useUnknown(null);
