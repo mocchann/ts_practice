@@ -1,18 +1,15 @@
-function doWhatever(obj: any) {
-  console.log(obj.user.name);
-  obj();
-  const result = obj * 10;
-  return result;
+function doNothing(val: unknown) {
+  console.log(val);
+  console.log(val.name);
 }
 
-doWhatever(3);
-
-doWhatever({
+doNothing(3);
+doNothing({
   user: {
-    name: "uhyo"
-  }
+    name: "uhyo",
+  },
 });
 
-doWhatever(() => {
-  console.log("hj");
+doNothing(() => {
+  console.log("hi");
 });
