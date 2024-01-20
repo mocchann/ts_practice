@@ -4,3 +4,15 @@ function doWhatever(obj: any) {
   const result = obj * 10;
   return result;
 }
+
+doWhatever(3);
+
+doWhatever({
+  user: {
+    name: "uhyo"
+  }
+});
+
+doWhatever(() => {
+  console.log("hj");
+});
