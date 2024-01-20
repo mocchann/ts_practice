@@ -1,16 +1,17 @@
-function get<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
-}
-
+type Animal = {
+  tag: "animal";
+  species: string;
+};
 type Human = {
+  tag: "human";
   name: string;
-  age: number;
 };
 
-const uhyo: Human = {
-  name: "uhyo",
-  age: 26,
-};
+type User = Human | Animal;
 
-const uhyoName = get(uhyo, "name");
-const uhyoAge = get(uhyo, "age");
+function getNamesIfAllHuman(users: readonly User[]): string[] | undefined {
+  if (users.every(user => user.tag === "human")) {
+    return (users as Human[]).map(user => user.name);
+  }
+  return undefined;
+}
