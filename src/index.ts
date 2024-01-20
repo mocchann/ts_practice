@@ -1,3 +1,6 @@
-const names = ["uhyo", "john", "taro"] as const;
-
-type Name = (typeof names)[number];
+function doWhatever(obj: any) {
+  console.log(obj.user.name);
+  obj();
+  const result = obj * 10;
+  return result;
+}
