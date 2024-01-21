@@ -1,10 +1,8 @@
-function useNever(value: never) {
-  const num: number = value;
-  const str: string = value;
-  const obj: object = value;
-  console.log(`value is ${value}`);
+function error(): never {
+  throw new Error("err!");
 }
 
-useNever({});
+const result: never = error();
 
-useNever(3.14);
+const str: string = result;
+console.log(str);
