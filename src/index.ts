@@ -1,12 +1,15 @@
-function useUnknown(val: unknown) {
-  if (typeof val === "string") {
-    console.log("val is string");
-    console.log(val.slice(0, 5));
-  } else {
-    console.log("val is a few string");
-    console.log(val);
-  }
+type HasToString = {
+  toString: () => string
 }
 
-useUnknown("foobar");
-useUnknown(null);
+function useToString1(value: HasToString & object) {
+  console.log(`value is ${value.toString()}`);
+}
+
+useToString1({
+  toString() {
+    return "foo";
+  }
+});
+
+useToString1(3.14);
