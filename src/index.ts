@@ -1,15 +1,10 @@
-type HasToString = {
-  toString: () => string
+function useNever(value: never) {
+  const num: number = value;
+  const str: string = value;
+  const obj: object = value;
+  console.log(`value is ${value}`);
 }
 
-function useToString1(value: HasToString & object) {
-  console.log(`value is ${value.toString()}`);
-}
+useNever({});
 
-useToString1({
-  toString() {
-    return "foo";
-  }
-});
-
-useToString1(3.14);
+useNever(3.14);
