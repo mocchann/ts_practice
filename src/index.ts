@@ -5,4 +5,5 @@ function error(): never {
 const result: never = error();
 
 const str: string = result;
+
 console.log(str);
