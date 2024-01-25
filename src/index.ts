@@ -1,9 +1,9 @@
-function error(): never {
-  throw new Error("err!");
+function isStringOrNumber(value: unknown): value is string | number {
+  return typeof value === "string" || typeof value === "number";
 }
 
-const result: never = error();
+const something: unknown = 123;
 
-const str: string = result;
-
-console.log(str);
+if (isStringOrNumber(something)) {
+  console.log(something.toString());
+}
