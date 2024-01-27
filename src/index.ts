@@ -1,12 +1,23 @@
-function useUnknown(val: unknown) {
-  if (typeof val === "string") {
-    console.log("val is string");
-    console.log(val.slice(0, 5));
-  } else {
-    console.log("val is a few string");
-    console.log(val);
+type Human = {
+  type: "Human";
+  name: string;
+  age: number;
+};
+
+function assertHuman(value: any): asserts value is Human {
+  if (value == null) {
+    throw new Error('Given value is null or undefined');
+  }
+  if (
+    value.type !== "Human" ||
+    typeof value.name !== "string" ||
+    typeof value.age !== "number"
+  ) {
+    throw new Error('Given value is not a Human');
   }
 }
 
-useUnknown("foobar");
-useUnknown(null);
+function checkAndUseHuman(value: unknown) {
+  assertHuman(value);
+  const name = value.name;
+}
