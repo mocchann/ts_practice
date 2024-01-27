@@ -1,9 +1,14 @@
-function isStringOrNumber(value: unknown): value is string | number {
-  return typeof value === "string" || typeof value === "boolean";
-}
+type Human = {
+  type: "Human";
+  name: string;
+  age: number;
+};
 
-const something: unknown = 123;
-
-if (isStringOrNumber(something)) {
-  console.log(something.toString());
+function isHuman(value: any): value is Human {
+  if (value == null) return false;
+  return (
+    value.type === "Human" &&
+    typeof value.name === "string" &&
+    typeof value.age === "number"
+  );
 }
