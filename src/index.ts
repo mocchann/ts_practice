@@ -1,4 +1,11 @@
-type NSN = [number, string, number];
+type Fruit = "apple" | "orange" | "strawberry";
 
-type SNSNS = [number, ...NSN, string];
+type FruitNumbers = {
+  [P in Fruit]: number
+};
 
+const numbers: FruitNumbers = {
+  apple: 3,
+  orange: 10,
+  strawberry: 20,
+};
