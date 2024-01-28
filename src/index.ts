@@ -1,28 +1,32 @@
-type Option<T> = {
-  tag: "exist";
+type Some<T> = {
+  tag: "some";
   value: T;
-} | {
-  tag: "non";
-};
-
-function isExist<T>(obj: Option<T>): obj is { tag: "exist", value: T} {
-  return obj.tag === "exist";
+}
+type None = {
+  tag: "none";
 }
 
-function checkProp(obj: Option<number>): void {
-  if (isExist(obj)) {
-    console.log(obj.value);
+type Option<T> = Some<T> | None;
+
+function mapOption<T, U>(obj: Option<T>, callback: (value: T) => U): Option<U> {
+  switch (obj.tag) {
+    case "some":
+      return {
+        tag: "some",
+        value: callback(obj.value)
+      }
+    case "none":
+      return {
+        tag: "none",
+      }
   }
 }
 
-const exist: Option<number> = {
-  tag: "exist",
-  value: 256,
-};
+function dOption(obj: Option<number>) {
+  return mapOption(obj, x => x * 2);
+}
+const four: Option<number> = { tag: "some", value: 4 };
+const nothing: Option<number> = { tag: "none" };
 
-const notExist: Option<number> = {
-  tag: "non",
-};
-
-checkProp(exist);
-checkProp(notExist);
+console.log(dOption(four));
+console.log(dOption(nothing));
