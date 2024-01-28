@@ -1,11 +1,14 @@
-type Fruit = "apple" | "orange" | "strawberry";
+type RestArgs<M> = M extends "string" ? [string, string]: [number, number, number];
 
-type FruitNumbers = {
-  [P in Fruit]: P[]
-};
+function func<M extends "string" | "number">(
+  mode: M,
+  ...args: RestArgs<M>
+) {
+  console.log(mode, ...args);
+}
 
-const numbers: FruitNumbers = {
-  apple: ["apple", "apple"],
-  orange: ["orange", "orange", "orange"],
-  strawberry: [],
-};
+func("string", "uhyo", "hyo");
+func("number", 1, 2, 3);
+
+func("string", 1, 2);
+func("number", "uhyo", "hyo");
