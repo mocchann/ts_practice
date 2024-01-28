@@ -5,11 +5,14 @@ type Option<T> = {
   tag: "non";
 };
 
+function isExist<T>(obj: Option<T>): obj is { tag: "exist", value: T} {
+  return obj.tag === "exist";
+}
+
 function checkProp(obj: Option<number>): void {
-  if (obj.tag === "non") {
-    return;
+  if (isExist(obj)) {
+    console.log(obj.value);
   }
-  console.log(obj.value);
 }
 
 const exist: Option<number> = {
