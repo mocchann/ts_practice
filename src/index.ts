@@ -1,14 +1,25 @@
-type RestArgs<M> = M extends "string" ? [string, string]: [number, number, number];
+type Option<T> = {
+  tag: "exist";
+  value: T;
+} | {
+  tag: "non";
+};
 
-function func<M extends "string" | "number">(
-  mode: M,
-  ...args: RestArgs<M>
-) {
-  console.log(mode, ...args);
+function checkProp(obj: Option<number>): void {
+  if (obj.tag === "non") {
+    return;
+  }
+  console.log(obj.value);
 }
 
-func("string", "uhyo", "hyo");
-func("number", 1, 2, 3);
+const exist: Option<number> = {
+  tag: "exist",
+  value: 256,
+};
 
-func("string", 1, 2);
-func("number", "uhyo", "hyo");
+const notExist: Option<number> = {
+  tag: "non",
+};
+
+checkProp(exist);
+checkProp(notExist);
