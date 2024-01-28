@@ -1,14 +1,32 @@
-type RestArgs<M> = M extends "string" ? [string, string]: [number, number, number];
-
-function func<M extends "string" | "number">(
-  mode: M,
-  ...args: RestArgs<M>
-) {
-  console.log(mode, ...args);
+type Some<T> = {
+  tag: "some";
+  value: T;
+}
+type None = {
+  tag: "none";
 }
 
-func("string", "uhyo", "hyo");
-func("number", 1, 2, 3);
+type Option<T> = Some<T> | None;
 
-func("string", 1, 2);
-func("number", "uhyo", "hyo");
+function mapOption<T, U>(obj: Option<T>, callback: (value: T) => U): Option<U> {
+  switch (obj.tag) {
+    case "some":
+      return {
+        tag: "some",
+        value: callback(obj.value)
+      }
+    case "none":
+      return {
+        tag: "none",
+      }
+  }
+}
+
+function dOption(obj: Option<number>) {
+  return mapOption(obj, x => x * 2);
+}
+const four: Option<number> = { tag: "some", value: 4 };
+const nothing: Option<number> = { tag: "none" };
+
+console.log(dOption(four));
+console.log(dOption(nothing));
