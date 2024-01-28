@@ -1,23 +1,14 @@
-type Human = {
-  type: "Human";
-  name: string;
-  age: number;
-};
+type RestArgs<M> = M extends "string" ? [string, string]: [number, number, number];
 
-function assertHuman(value: any): asserts value is Human {
-  if (value == null) {
-    throw new Error('Given value is null or undefined');
-  }
-  if (
-    value.type !== "Human" ||
-    typeof value.name !== "string" ||
-    typeof value.age !== "number"
-  ) {
-    throw new Error('Given value is not a Human');
-  }
+function func<M extends "string" | "number">(
+  mode: M,
+  ...args: RestArgs<M>
+) {
+  console.log(mode, ...args);
 }
 
-function checkAndUseHuman(value: unknown) {
-  assertHuman(value);
-  const name = value.name;
-}
+func("string", "uhyo", "hyo");
+func("number", 1, 2, 3);
+
+func("string", 1, 2);
+func("number", "uhyo", "hyo");
