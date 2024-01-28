@@ -1,4 +1,4 @@
-type NumberAndStrings = [number, ...string[], number, ...number[]];
+type NSN = [number, string, number];
 
-const arr1: NumberAndStrings = [25, "uhyo", "hyo", "hyo", 0];
-const arr2: NumberAndStrings = [25, 25];
+type SNSNS = [number, ...NSN, string];
+
