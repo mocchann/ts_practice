@@ -1,23 +1,8 @@
-type Human = {
-  type: "Human";
-  name: string;
-  age: number;
-};
+type NumberAndStrings = [number, ...string[]];
 
-function assertHuman(value: any): asserts value is Human {
-  if (value == null) {
-    throw new Error('Given value is null or undefined');
-  }
-  if (
-    value.type !== "Human" ||
-    typeof value.name !== "string" ||
-    typeof value.age !== "number"
-  ) {
-    throw new Error('Given value is not a Human');
-  }
-}
+const arr1: NumberAndStrings = [25, "uhyo", "hyo", "hyo"];
+const arr2: NumberAndStrings = [25];
 
-function checkAndUseHuman(value: unknown) {
-  assertHuman(value);
-  const name = value.name;
-}
+const arr3: NumberAndStrings = ["uhyo", "hyo"];
+const arr4: NumberAndStrings = [25, 26, 27];
+const arr5: NumberAndStrings = [];
