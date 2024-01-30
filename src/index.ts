@@ -1,3 +1,3 @@
-import { age, uhyoName } from "./uhyo.js";
+import { age as uhyoAge, uhyoName } from "./uhyo.js";
 
-console.log(uhyoName, age);
+console.log(uhyoName, uhyoAge);
