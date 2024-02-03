@@ -1,3 +1,3 @@
-export const getName = () => {
+export function getName() {
   return "uhyo";
 };
