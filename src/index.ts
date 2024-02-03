@@ -1,8 +1,10 @@
-import { tama } from "./animal";
+import type { Animal, tama } from "./animal.js";
 
-const cat: typeof tama = {
-  species: "FFFF",
-  age: 0,
+const cat: Animal = {
+  ...tama
 };
 
-console.log(cat);
+const catt: typeof tama = {
+  species: "fafkj;",
+  age: 1,
+};
