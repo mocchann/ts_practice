@@ -1,3 +1,2 @@
-export function getName() {
-  return "uhyo";
-};
+export const name = "uhyo";
+export const age = 26;

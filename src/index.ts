@@ -1,10 +1,4 @@
-import { Animal, type tama } from "./animal.js";
+import * as uhyo from "./uhyo.js"
 
-const cat: Animal = {
-  ...tama
-};
-
-const catt: typeof tama = {
-  species: "fafkj;",
-  age: 1,
-};
+console.log(uhyo.name);
+console.log(uhyo.age);
