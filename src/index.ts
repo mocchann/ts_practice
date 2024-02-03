@@ -1,4 +1,3 @@
-import { default as incremen, value } from "./counter.js";
+import uhyoAge from "./uhyoAge.js";
 
-incremen();
-console.log(value);
+console.log(uhyoAge);
