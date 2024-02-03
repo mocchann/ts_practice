@@ -1,1 +1,5 @@
-export default 28;
+const age = 27;
+
+export {
+  age as default
+}
