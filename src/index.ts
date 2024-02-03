@@ -1,8 +1,6 @@
-import { increment } from "./counter.js";
+import { getValue, increment } from "./counter.js";
 
+console.log(getValue());
 console.log(increment());
-console.log(increment());
-console.log(increment());
-console.log(increment());
-console.log(increment());
+console.log(getValue());
 console.log(increment());
