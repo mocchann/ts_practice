@@ -1,3 +1,3 @@
-import uhyoAge from "./uhyoAge.js";
+import increment from "./counter.js";
 
-console.log(uhyoAge);
+console.log(increment());
