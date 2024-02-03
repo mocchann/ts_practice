@@ -1,7 +1,5 @@
 export let value = 0;
 
-console.log("run");
-
-export function increment() {
+export default function increment() {
   return ++value;
 }
