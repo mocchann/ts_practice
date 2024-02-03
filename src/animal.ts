@@ -8,4 +8,4 @@ const tama: Animal = {
   age: 1,
 }
 
-export { Animal, tama }
+export type { Animal, tama }
