@@ -1,4 +1,8 @@
-import { getName } from "./uhyo.js";
+import { increment } from "./counter.js";
 
-const name: string = getName();
-console.log(name);
+console.log(increment());
+console.log(increment());
+console.log(increment());
+console.log(increment());
+console.log(increment());
+console.log(increment());
