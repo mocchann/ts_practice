@@ -1,3 +1,4 @@
-import { age as uhyoAge, uhyoName } from "./uhyo.js";
+import { getName } from "./uhyo.js";
 
-console.log(uhyoName, uhyoAge);
+const name: string = getName();
+console.log(name);
