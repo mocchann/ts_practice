@@ -1,4 +1,4 @@
-import type { Animal, tama } from "./animal.js";
+import { Animal, type tama } from "./animal.js";
 
 const cat: Animal = {
   ...tama
