@@ -1,5 +1,4 @@
 import { increment, value } from "./counter.js";
 
-console.log(increment());
-console.log(value);
+value = 100;
 console.log(increment());
