@@ -1,13 +1,10 @@
-import { readFileSync } from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+setTimeout(() => {
+  console.log("タイマー呼び出し");
+}, 100);
 
-const filePath = fileURLToPath(import.meta.url);
-console.log(filePath);
-const fileDir = path.dirname(filePath);
-console.log(fileDir);
-const dataFile = path.join(fileDir, "../uhyo.txt");
-console.log(dataFile);
-
-const result = readFileSync(dataFile, { encoding: 'utf-8'});
-console.log(result);
+const startTime = performance.now();
+let count = 0;
+while (performance.now() - startTime < 1000) {
+  count++;
+}
+console.log(count);
