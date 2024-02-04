@@ -1,13 +1,9 @@
-import { readFile } from "fs/promises";
-
-const p = readFile("uhyo.txt", "utf8");
-
-p.then((result) => {
-  console.log("成功", result);
+const p = new Promise<number>((resolve) => {
+  setTimeout(() => {
+    resolve(100);
+  }, 3000);
 });
-p.catch((err) => {
-  console.log("失敗", err);
-});
-p.finally(() => {
-  console.log("終了");
+
+p.then((num) => {
+  console.log(`結果は${num}`);
 });
