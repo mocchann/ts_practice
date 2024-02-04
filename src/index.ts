@@ -1,5 +1,5 @@
 const sleepReject = (duration: number) => {
-  return new Promise<void>((resolve, reject) => {
+  return new Promise<never>((resolve, reject) => {
     setTimeout(reject, duration);
   })
 }
