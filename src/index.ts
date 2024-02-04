@@ -1,6 +1,9 @@
-import { Human } from "./human";
+import fastify from "fastify";
 
-export const uhyo: Human = {
-  name: "uhyo",
-  age: 26,
-};
+const app = fastify();
+
+app.get('/', (req, reply) => {
+  reply.send("hello world");
+});
+
+app.listen(8080);
