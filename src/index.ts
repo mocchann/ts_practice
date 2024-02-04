@@ -1,13 +1,7 @@
-import { readFileSync } from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import { readFile } from "fs";
 
-const filePath = fileURLToPath(import.meta.url);
-console.log(filePath);
-const fileDir = path.dirname(filePath);
-console.log(fileDir);
-const dataFile = path.join(fileDir, "../uhyo.txt");
-console.log(dataFile);
-
-const result = readFileSync(dataFile, { encoding: 'utf-8'});
-console.log(result);
+console.log("1. read");
+readFile("uhyo.txt", (data) => {
+  console.log("3. readed");
+})
+console.log("2. read start");
