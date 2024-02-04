@@ -1,9 +1,9 @@
-const p = new Promise<number>((resolve) => {
-  setTimeout(() => {
-    resolve(100);
-  }, 3000);
-});
+const sleep = (duration: number) => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, duration);
+  })
+}
 
-p.then((num) => {
-  console.log(`結果は${num}`);
+sleep(3000).then(() => {
+  console.log("3秒経過");
 });
