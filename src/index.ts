@@ -3,11 +3,8 @@ import { readFile } from "fs/promises";
 const p = readFile("uhyo.txt", "utf8");
 
 p.then((result) => {
-  console.log(1);
+  console.log("成功", result);
 });
-p.then((result) => {
-  console.log(2);
-});
-p.then(() => {
-  console.log(3);
+p.catch((error) => {
+  console.log("失敗", error);
 });
