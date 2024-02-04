@@ -1,10 +1,7 @@
-setTimeout(() => {
-  console.log("タイマー呼び出し");
-}, 100);
+import { readFile } from "fs/promises";
 
-const startTime = performance.now();
-let count = 0;
-while (performance.now() - startTime < 1000) {
-  count++;
-}
-console.log(count);
+const p = readFile("uhyo.txt", "utf8");
+
+p.then((data) => {
+  console.log(data);
+});
