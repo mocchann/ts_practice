@@ -1,9 +1,13 @@
-import express from "express";
+import { readFileSync } from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const app = express();
+const filePath = fileURLToPath(import.meta.url);
+console.log(filePath);
+const fileDir = path.dirname(filePath);
+console.log(fileDir);
+const dataFile = path.join(fileDir, "../uhyo.txt");
+console.log(dataFile);
 
-app.get('/', (req, reply) => {
-  reply.send("hello world");
-});
-
-app.listen(8080);
+const result = readFileSync(dataFile, { encoding: 'utf-8'});
+console.log(result);
