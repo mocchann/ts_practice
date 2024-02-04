@@ -1,9 +1,5 @@
-import express from "express";
+import { readFile } from "fs";
 
-const app = express();
-
-app.get('/', (req, reply) => {
-  reply.send("hello world");
+readFile('../uhyo.txt', 'utf8', (err, file) => {
+  console.log(file.match(/uhyo/g)?.length);
 });
-
-app.listen(8080);
