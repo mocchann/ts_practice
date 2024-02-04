@@ -1,8 +1,10 @@
-import { readFile } from "fs";
+setTimeout(() => {
+  console.log("タイマー呼び出し");
+}, 100);
 
 const startTime = performance.now();
-readFile("uhyo.txt", "utf8", (err, result) => {
-  const endTime = performance.now();
-  console.log(`${endTime - startTime}ミリ秒かかった`);
-});
-console.log("読み込み開始");
+let count = 0;
+while (performance.now() - startTime < 1000) {
+  count++;
+}
+console.log(count);
