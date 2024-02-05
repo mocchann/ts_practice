@@ -1,1 +1,1 @@
-new Promise((resolve) => { resolve(100); })
+new Promise((resolve,reject) => {reject("foo");})
