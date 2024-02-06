@@ -6,7 +6,7 @@ const sleepReject = (duration: number) => {
   });
 };
 
-const p = Promise.allSettled([
+const p = Promise.any([
   readFile("foo.txt", "utf8"),
   sleepReject(5000),
 ]);
