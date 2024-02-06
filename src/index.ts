@@ -6,8 +6,7 @@ const p = Promise.all([
   readFile("baz.txt", "utf8"),
 ]);
 
-p.then((result) => {
-  const [foo, bar, baz] = result;
+p.then(([foo, bar, baz]) => {
   console.log("foo.txt", foo);
   console.log("bar.txt", bar);
   console.log("baz.txt", baz);
