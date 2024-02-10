@@ -1,10 +1,8 @@
-import { readFile } from "fs/promises";
-
-readFile("foo.txt", "utf8")
-  .finally(() => {
-    console.log("foo.txt is loaded?");
-  })
-  .catch(() => "")
-  .then((result) => {
-    console.log(result);
-});
+const repeat10 = (str: string) => {
+  new Promise<string>((resolve) => {
+    setTimeout(
+      () => resolve(str.repeat(10)),
+      1000
+    );
+  });
+}
