@@ -1,10 +1,10 @@
-setTimeout(() => {
-  console.log("タイマー呼び出し");
-}, 100);
-
-const startTime = performance.now();
-let count = 0;
-while (performance.now() - startTime < 1000) {
-  count++;
-}
-console.log(count);
+import("fs/promises")
+  .then(({ readFile }) =>
+    readFile("fooo.txt", "utf8")
+  )
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log("エラー", error);
+  })
