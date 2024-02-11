@@ -1,10 +1,13 @@
 import { readFile } from "fs/promises";
 
-  const p1 = readFile("foo.txt", "utf8");
-  const p2 = p1.then((result) => {
-    throw new Error("ERROR");
-  });
+const sleepReject = (duration: number) => {
+  return new Promise<never>((resolve, reject) => {
+    setTimeout(reject, duration);
+  })
+};
 
-  p2.then((result) => {
+const p = readFile("foo.txt", "utf8")
+  .then(() => sleepReject(1000))
+  .then((result) => {
     console.log(result);
   });
