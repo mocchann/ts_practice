@@ -1,9 +1,10 @@
-import { readFile } from "fs/promises";
-
-const p = readFile("fooo.txt", "utf8");
-
-p.then((result) => {
-  console.log(result);
-}).catch((err) => {
-  console.log("失敗", err);
-});
+import("fs/promises")
+  .then(({ readFile }) =>
+    readFile("fooo.txt", "utf8")
+  )
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log("エラー", error);
+  })
