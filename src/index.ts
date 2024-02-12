@@ -20,7 +20,9 @@ const dataFile = path.join(fileDir, "../uhyo.txt");
 const data = await Promise.race([
   readFile(dataFile, { encoding: "utf8" }),
   errorAfter1ms(),
-]);
+]).catch(() => {
+  process.exit();
+});
 
 let count = 0;
 let currentIndex = 0;
