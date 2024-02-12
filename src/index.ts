@@ -1,12 +1,7 @@
-async function main() {
-  const { readFile, writeFile } = await import("fs/promises");
+import { readFile, writeFile } from "fs/promises";
 
-  const fooContent = await readFile("foo.txt", "utf8");
+const fooContent = await readFile("foo.txt", "utf8");
 
-  await writeFile("bar.txt", fooContent + fooContent);
-  console.log("書き込み完了");
-}
+await writeFile("bar.txt", fooContent + fooContent);
 
-main().then(() => {
-  console.log("mainが完了した");
-})
+console.log("書き込み完了");
