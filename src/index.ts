@@ -1,5 +1,5 @@
 import { readFile } from "fs/promises";
-import path, { resolve } from "path";
+import path from "path";
 import { fileURLToPath } from "url";
 
 const sleep = (duration: number) => {
