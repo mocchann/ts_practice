@@ -5,15 +5,17 @@ const sleep = (duration: number) => {
 };
 
 async function get3() {
-  console.log("呼び出された");
   await sleep(1000);
-  console.log("次の処理に進む");
   return 3;
 }
 
-console.log("呼び出す");
-const p = get3();
-p.then(num => {
-  console.log(num);
+async function main() {
+  const num1 = await get3();
+  const num2 = await get3();
+  const num3 = await get3();
+  return num1 + num2 + num3;
+}
+
+main().then(result => {
+  console.log(result);
 });
-console.log("呼び出した");
