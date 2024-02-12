@@ -1,5 +1,15 @@
-import { readFile, writeFile } from "fs/promises";
+async function main() {
+  const { readFile, writeFile } = await import("fs/promises");
 
-const fooContent = await readFile("foo.txt", "utf8");
+  try {
+    const fooContent = await readFile("foo.txt", "utf8");
+    await writeFile("bar.txt", fooContent + fooContent);
+    console.log("書き込み完了");
+  } catch {
+    console.error("書き込み失敗");
+  }
+}
 
-export const bar = fooContent + fooContent;
+main().then(() => {
+  console.log("main成功");
+})
