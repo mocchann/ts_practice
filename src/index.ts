@@ -1,8 +1,3 @@
-async function fail() {
-  throw new Error("oh my god!");
+async function get3(): number {
+  return 3;
 }
-
-const f = fail();
-f.catch((err) => {
-  console.log(err);
-});
